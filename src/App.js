@@ -5,9 +5,6 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>
-          Hello world!!
-        </h1>
         <Weather />
         <p>Check out my <a href="https://github.com/Sveake/react-weather-app" target="_blank" rel="noreferrer">Github repository </a></p>
        
