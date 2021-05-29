@@ -2,7 +2,15 @@
   text-align: center;
 }
 
+.container {
+  background: yellow;
+}
+
 .App-link {
   color: #61dafb;
 }
 
+.footer {
+  margin-top: 600px;
+  text-align: center;
+}

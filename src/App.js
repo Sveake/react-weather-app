@@ -6,10 +6,12 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-      <div className="App-header">
         <Weather />
-      </div>
-      <footer>
+
+
+
+        
+      <footer className="footer">
         Check out my <a href="https://github.com/Sveake/react-weather-app" target="_blank" rel="noreferrer">Github repository </a>
         </footer>
       </div>
