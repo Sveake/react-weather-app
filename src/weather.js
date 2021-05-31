@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./weather.css";
 import axios from "axios";
+import FormatDate from "./FormatFate";
 
 export default function Weather () {
 const [weatherData, setWeatherData] = useState({});
@@ -16,7 +17,7 @@ function handleResponse(response) {
     humidity: response.data.main.humidity,
     city: response.data.name,
     description: response.data.weather[0].description,
-    date: "Monday May 31st, 2021"
+    date: new Date(response.data.dt * 1000),
   });
   setReady(true);
 }
@@ -30,14 +31,14 @@ if (ready) {
   <input type="submit" value="Submit" className="btn btn-info" />
 </form>
 <ul className="dateTime">
-  <li>{weatherData.date}</li> 
+  <li><FormatDate date={weatherData.date} /></li> 
   <li>Updated at 16:00</li>
 </ul>
 <hr />
 <div>
     <ul className="temperature">
       <li>{Math.round(weatherData.temperature)} <span className="celsius">C</span> | <span className="fahrenheit">F</span></li>
-      <li>{weatherData.description}</li>
+      <li className="text-capitalize">{weatherData.description}</li>
     </ul>
 <div className="row">
       <div className="col-2">
