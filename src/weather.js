@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./weather.css";
 import axios from "axios";
-import FormatDate from "./FormatFate";
+import FormatDate from "./FormatDate";
 
 export default function Weather () {
 const [weatherData, setWeatherData] = useState({});
