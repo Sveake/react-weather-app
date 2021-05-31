@@ -9,7 +9,7 @@ function App() {
         <h1>
           Weather Window
         </h1>
-        <Weather />
+        <Weather defaultCity="Tallinn" />
 
 
 

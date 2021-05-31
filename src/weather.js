@@ -3,25 +3,24 @@ import "./weather.css";
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
 
-export default function Weather () {
-const [weatherData, setWeatherData] = useState({});
-const [ready, setReady] = useState(false);
-const [city, setCity] = useState({});
+export default function Weather (props) {
+const [weatherData, setWeatherData] = useState({ ready: false });
+const [city, setCity] = useState(props.defaultCity);
 
 
 
 function handleResponse(response) {
   console.log(response.data);
   setWeatherData({
+    ready: true,
     temperature: response.data.main.temp,
     wind: response.data.wind.speed,
     humidity: response.data.main.humidity,
     city: response.data.name,
     description: response.data.weather[0].description,
     date: new Date(response.data.dt * 1000),
-    icon: "http://openweathermap.org/img/wn/10d@2x.png",
+    icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
   });
-  setReady(true);
 }
 
 function search() {
@@ -39,7 +38,7 @@ function handleCity(event) {
 setCity(event.target.value);
 }
 
-if (ready) {
+if (weatherData.ready) {
   return (
     <div className="weather">
 <form onSubmit={handleSubmit}>
