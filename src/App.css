@@ -1,10 +1,17 @@
 h1 {
-  color: blue;
+  color: #0068B7;
   font-size: 15px;
 }
 
+.App {
+  max-width: 700px;
+  margin: 30px auto;
+}
+
 .container {
-  background: yellow;
+  background: #E6E1DD;
+  border: 2px solid #003366;
+  padding: 20px 25px 40px 25px;
 }
 
 .App-link {

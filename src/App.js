@@ -14,10 +14,11 @@ function App() {
 
 
         
+      
+      </div>
       <footer className="footer">
         Check out my <a href="https://github.com/Sveake/react-weather-app" target="_blank" rel="noreferrer">Github repository </a>
         </footer>
-      </div>
     </div>
   );
 }

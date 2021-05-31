@@ -6,8 +6,8 @@ export default function Weather () {
     <div className="weather">
 <h2 className="city">Tallinn</h2>
 <form className="Search">
-  <input type="search" placeholder="Write city here" />
-  <input type="submit" value="Submit" className="btn btn-warning" />
+  <input type="search" placeholder="Write city here" autoFocus="on" />
+  <input type="submit" value="Submit" className="btn btn-info" />
 </form>
 <ul className="dateTime">
   <li>May 31, 2021</li>
@@ -16,13 +16,12 @@ export default function Weather () {
 <hr />
 <div>
     <ul className="temperature">
-      <li>Temperature: 20 C</li>
-      <li>Icon</li>
+      <li>Temperature: 20 <span className="celsius">C</span> | <span className="fahrenheit">F</span></li>
       <li>Cloudy</li>
     </ul>
 <div className="row">
-      <div className="col-3">
-        Icon
+      <div className="col-2">
+        <img src="https://cdn3.iconfinder.com/data/icons/weather-610/64/weather_drizzle_rain_cloud-512.png" alt="weather" width="80" />
       </div>
   <div className="col-4">
     <ul className="weather-data">
