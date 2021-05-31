@@ -1,9 +1,17 @@
-.App {
-    font-family: sans-serif;
-    text-align: center;
-  }
-  
-  .forecast {
-    list-style: none;
-    text-align: left;
-  }
+ul.dateTime {
+  list-style: none;
+  padding-left: 0;
+  color: blue;
+}
+
+ul.temperature {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 15px;
+  color: purple;
+}
+
+ul.weather-data {
+  list-style: none;
+  color: green;
+}

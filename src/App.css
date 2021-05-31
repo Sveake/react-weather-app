@@ -1,5 +1,6 @@
-.App {
-  text-align: center;
+h1 {
+  color: blue;
+  font-size: 15px;
 }
 
 .container {
@@ -11,6 +12,5 @@
 }
 
 .footer {
-  margin-top: 600px;
   text-align: center;
 }

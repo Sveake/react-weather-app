@@ -1,54 +1,41 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React from "react";
 import "./weather.css";
 
-export default function Weather() {
-    let [city, setCity] = useState(null);
-  let [forecast, setForecast] = useState(null);
-
-  function showForecast(response) {
-    setForecast(
-      <ul className="forecast">
-        <li>
-          Temperature: {Math.round(response.data.main.temp)} degrees Celsius
-        </li>
-        <li>Humidity: {response.data.main.humidity} %</li>
-        <li>Description: {response.data.weather[0].description}</li>
-        <li>
-          <img
-            src={`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`}
-            alt="weather"
-          />
-        </li>
-      </ul>
-    );
-  }
-
-  function getCity(event) {
-    event.preventDefault();
-    setCity(event.target.value);
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=9aef592de78a13851ffe5a565ea13c5f&units=metric
-    `;
-    axios.get(url).then(showForecast);
-  }
-
+export default function Weather () {
   return (
-    <div className="App">
-      <h2>Weather App</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          onChange={getCity}
-          type="search"
-          placeholder="Type city here..."
-        />
-        <input type="submit" value="Search" />
-      </form>
-
-      <div> {forecast} </div>
+    <div className="weather">
+<h2 className="city">Tallinn</h2>
+<form className="Search">
+  <input type="search" placeholder="Write city here" />
+  <input type="submit" value="Submit" className="btn btn-warning" />
+</form>
+<ul className="dateTime">
+  <li>May 31, 2021</li>
+  <li>Updated at 16:00</li>
+</ul>
+<hr />
+<div>
+    <ul className="temperature">
+      <li>Temperature: 20 C</li>
+      <li>Icon</li>
+      <li>Cloudy</li>
+    </ul>
+<div className="row">
+      <div className="col-3">
+        Icon
+      </div>
+  <div className="col-4">
+    <ul className="weather-data">
+      <li>Humidity: 80%</li>
+      <li>Precipitation: 15%
+      </li>
+      <li>
+      Wind speed: 5 km / h
+      </li>
+    </ul>
+  </div>
+  </div>
+</div>
     </div>
   );
 }
