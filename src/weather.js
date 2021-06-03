@@ -11,10 +11,10 @@ const [city, setCity] = useState(props.defaultCity);
 
 
 function handleResponse(response) {
-  console.log(response.data);
   setWeatherData({
     ready: true,
     temperature: response.data.main.temp,
+    coord: response.data.coord,
     wind: response.data.wind.speed,
     humidity: response.data.main.humidity,
     city: response.data.name,
@@ -47,7 +47,7 @@ if (weatherData.ready) {
   <input type="submit" value="Submit" className="btn btn-info" />
 </form>
 <WeatherInfo data={weatherData} />
-<WeatherForecast />
+<WeatherForecast cordinates={weatherData.coord}/>
 
     </div>
   );
