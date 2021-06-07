@@ -3,19 +3,17 @@ import "./WeatherForecast.css";
 import axios from "axios";
 import WeatherIcon from "./WeatherIcon";
 
+
 export default function WeatherForecast(props) {
 
 let [loaded, setLoaded] = useState(false);
 let [forecast, setForecast] = useState(null);
-let [icon, setIcon] = useState(null);
+
 
 function handleResponse(response) {
     console.log(response);
     setForecast(response.data.daily);
 setLoaded(true);
-setIcon({
-    icon: `https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png`,
-});
 }
 
 if (loaded) {
@@ -25,7 +23,7 @@ if (loaded) {
             <div className="row">
                 <div className="col">
                     <div className="WeatherForecast-day">{forecast[0].dt}</div>
-                    <WeatherIcon />
+                    <WeatherIcon code={forecast[0].weather[0].icon}/>
                     <div className="WeatherForecast-temperatures">
                         <span className="max-temp">{Math.round(forecast[0].temp.max)}°</span> | {" "}
                         <span className="min-temp">{Math.round(forecast[0].temp.min)}°</span>
