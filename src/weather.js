@@ -48,7 +48,6 @@ if (weatherData.ready) {
   <input type="submit" value="Submit" className="btn btn-info" />
 </form>
 <WeatherInfo data={weatherData} />
-<WeatherForecast cordinates={weatherData.coord}/>
 
     </div>
   );
