@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./weather.css";
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
-import WeatherForecast from "./WeatherForecast";
 
 
 export default function Weather (props) {
@@ -21,7 +20,7 @@ function handleResponse(response) {
     city: response.data.name,
     description: response.data.weather[0].description,
     date: new Date(response.data.dt * 1000),
-    icon: response.data.weather[0].icon,
+    iconUrl:`http://openweathermap.org/img/wn${response.data.weather[0].icon}@2x.png`,
   });
 }
 
